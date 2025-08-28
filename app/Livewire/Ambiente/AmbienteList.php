@@ -11,11 +11,11 @@ class AmbienteList extends Component
     use WithPagination;
 
     public $search = '';
-    public $perPage = 10;
+    public $perPage = 15;
 
     protected $queryString = [
         'search' => ['except' => ''],
-        'perPage' => ['except' => 10],
+        'perPage' => ['except' => 15],
     ];
 
 
@@ -27,5 +27,11 @@ class AmbienteList extends Component
             ->paginate($this->perPage);
 
         return view('livewire.ambiente.ambiente-list', compact('ambientes'));
+    }
+
+    public function delete($id)
+    {
+        Ambiente::findOrFail($id)->delete();
+        session()->flash('message', 'Ambiente deletado com sucesso');
     }
 }

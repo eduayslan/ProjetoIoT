@@ -11,6 +11,19 @@ class AmbienteCreate extends Component
     public $descricao;
     public $status;
 
+
+    protected $rules = [
+        'nome' => 'required',
+        'descricao' => 'required',
+        
+    ];
+
+    protected $messages = [
+        'nome.required' => 'O campo é obrigatório',
+        'descricao.required' => 'O campo é obrigatório',
+      
+    ];
+
      public function store()
     {
 

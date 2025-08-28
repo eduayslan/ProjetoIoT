@@ -49,6 +49,11 @@
                                         <a href="{{ route('ambientes.edit', $ambiente->id) }}" class="btn btn-sm btn-outline-warning me-1" title="Editar">
                                             <i class="bi bi-pencil"></i>
                                         </a>
+
+                                        <button wire:click="delete({{$ambiente->id}})"
+                                            class="btn btn-sm btn-danger"wire:confirm = "Tem certeza que deseja excluir">
+                                            <i class="bi bi-person-x-fill"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             @empty
@@ -60,6 +65,41 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <div class="d-flex flex-column align-items-center mt-3">
+                        <div class="mb-2">
+                            Mostrando {{ $ambientes->firstItem() }} até {{ $ambientes->lastItem() }} de
+                            {{ $ambientes->total() }} resultados
+                        </div>
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                              
+                                <li class="page-item {{ $ambientes->onFirstPage() ? 'disabled' : '' }}">
+                                    <a href="#" class="page-link" wire:click.prevent="previousPage"
+                                        aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+
+                                @foreach ($ambientes->getUrlRange(1, $ambientes->lastPage()) as $page => $url)
+                                    <li class="page-item {{ $ambientes->currentPage() == $page ? 'active' : '' }}">
+                                        <a href="#" class="page-link"
+                                            wire:click.prevent="gotoPage({{ $page }})">{{ $page }}</a>
+                                    </li>
+                                @endforeach
+
+                               
+                                <li class="page-item {{ $ambientes->hasMorePages() ? '' : 'disabled' }}">
+                                    <a href="#" class="page-link" wire:click.prevent="nextPage" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+                    </div>
+
                 </div>
 
                 <div class="d-flex justify-content-end mt-3">

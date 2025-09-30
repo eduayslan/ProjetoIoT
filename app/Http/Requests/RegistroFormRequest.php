@@ -11,7 +11,7 @@ class RegistroFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,18 +22,20 @@ class RegistroFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "valor" => "required",
-            "unidade" => "required",
-            "data_hora" => "required"
+            'sensor_id' => 'required',
+            'valor' => 'required',
+            'unidade' => 'required',
+            'data_hora' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'valor.required' => "Campo obrigatório",
-            'unidade.required' => "Campo obrigatório",
-            'data_hora.required' => "Campo obrigatório"
+            'sensor_id.required' => 'Campo obrigatório',
+            'valor.required' => 'Campo obrigatório',
+            'unidade.required' => 'Campo obrigatório',
+            'data_hora.required' => 'Campo obrigatório'
         ];
     }
 }

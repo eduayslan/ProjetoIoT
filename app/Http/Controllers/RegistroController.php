@@ -16,10 +16,6 @@ class RegistroController extends Controller
             'data_hora' => $request->data_hora
         ]);
         
-        return response()->json([
-            'status' => true,
-            'message' => "sucesso",
-            'data' => $registro
-        ]);
+        return $registro;
     }
 }

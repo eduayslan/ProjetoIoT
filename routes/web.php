@@ -12,8 +12,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Dashboard::class);
 
+
+Route::get('/list', AmbienteList::class)->name('ambientes.list');
+
+Route::get('/create', AmbienteCreate::class)->name('ambientes.create');
+
+Route::get('/edit{id}', AmbienteEdit::class)->name('ambientes.edit');
+
 Route::get('/list', SensoresList::class)->name('sensores.list');
 
 Route::get('/create', SensoresCreate::class)->name('sensores.create');
 
 Route::get('/edit{id}', SensoresEdit::class)->name('sensores.edit');
+

@@ -51,16 +51,14 @@
                                     <td>{{ $sensor->descricao }}</td>
                                     <td>{{ $sensor->status }}</td>
                                     <td class="text-center">
-                                        <a href="{{ route('sensores.edit', $sensor->id) }}"
-                                            class="btn btn-sm btn-outline-warning me-1" title="Editar">
+                                        <a href="{{ route('sensores.edit', $sensor->id) }}" class="btn btn-sm btn-outline-warning me-1" title="Editar">
                                             <i class="bi bi-pencil"></i>
                                         </a>
 
                                         <button wire:click="delete({{$sensor->id}})"
-                                    class="btn btn-sm btn-danger" onclick="return confirm('Tem Certeza')">
-                                    <i class="bi bi-person-x-fill"></i>
-                                </button>
-
+                                            class="btn btn-sm btn-danger"wire:confirm = "Tem certeza que deseja excluir">
+                                            <i class="bi bi-person-x-fill"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             @empty
@@ -110,7 +108,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end mt-3">
-                 
+
                 </div>
             </div>
         </div>

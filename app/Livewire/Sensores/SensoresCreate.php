@@ -31,20 +31,19 @@ class SensoresCreate extends Component
     ];
 
 
-     public function store()
+    public function store()
     {
         $this->validate();
         Sensor::Create([
             'ambiente_id' => $this->ambiente_id,
-            'codigo' => $this -> codigo,
-            'tipo' => $this -> tipo,
-            'descricao' => $this -> descricao,
-            'status' => $this -> status,
+            'codigo' => $this->codigo,
+            'tipo' => $this->tipo,
+            'descricao' => $this->descricao,
+            'status' => $this->status,
         ]);
 
-        session()->flash('success', 'Sensor Cadastrado');
+        session()->flash('message', 'Sensor Cadastrado com sucesso. . .');
         return redirect()->route('sensores.list');
-
     }
 
     public function render()

@@ -43,13 +43,13 @@ class RegistroSeeder extends Seeder
                         $valor = $faker->randomFloat(2, 20, 90);
                         break;
                     case 'luminosidade':
-                        $valor = $faker->numberBetween(0, 1000);
+                        $valor = $faker->numberBetween(0, 10);
                         break;
                     case 'presenca':
                         $valor = $faker->randomElement(['ON', 'OFF']);
                         break;
                     default:
-                        $valor = $faker->randomFloat(2, 0, 100);
+                        $valor = $faker->randomFloat(2, 0, 10);
                         break;
                 }
 

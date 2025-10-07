@@ -26,8 +26,8 @@
 
                 <div class="mb-3">
                     <span style="font-size:20px">
-                        <label for="status" class="form-label">Status</label>
                         <i class="bi bi-briefcase-fill"></i>
+                        <label for="status" class="form-label">Status</label>
                     </span>
 
                     <select class="form-select" aria-label="default-select example"@error('status') is-invalid @enderror

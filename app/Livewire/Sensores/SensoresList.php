@@ -11,12 +11,28 @@ class SensoresList extends Component
      use WithPagination;
 
     public $search = '';
-    public $perPage = 15;
+    public $perPage = 18;
 
     protected $queryString = [
         'search' => ['except' => ''],
-        'perPage' => ['except' => 15],
+        'perPage' => ['except' => 18],
     ];
+
+    /**
+     * Alterna o status (0 ou 1) do Sensor no banco de dados.
+     * @param int $sensorId O ID do sensor a ser atualizado.
+     */
+    public function toggleStatus(int $sensorId)
+    {
+        $sensor = Sensor::findOrFail($sensorId);
+
+        $sensor->status = $sensor->status ? 0 : 1;
+
+        $sensor->save();
+
+        session()->flash('message', 'Status do Sensor ' . $sensor->id . 
+        ' atualizado para: ' . ($sensor->status ? 'Ativo' : 'Inativo'));
+    }
 
     public function render()
     {

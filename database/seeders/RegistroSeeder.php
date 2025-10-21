@@ -59,6 +59,7 @@ class RegistroSeeder extends Seeder
                     'unidade' => $unidade,
                     'data_hora' => $dataAtual->format('Y-m-d H:i:s')
                 ]);
+            
             }
             $dataAtual->addMinutes(10);
         }

@@ -28,26 +28,26 @@
             </div>
 
                 <div class="mb-3">
-                    <label class="form-label text-light"><i class="bi bi-person"></i> codigo</label>
+                    <label class="form-label text-light"><i class="bi bi-code-slash"></i> Código</label>
                     <input type="text" wire:model="codigo" class="form-control">
                     @error('codigo') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label text-light"><i class="bi bi-credit-card"></i> Descrição</label>
+                    <label class="form-label text-light"><i class="bi bi-text-left"></i> Descrição</label>
                     <input type="text" wire:model="descricao" class="form-control">
                     @error('descricao') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label text-light"><i class="bi bi-chat-left-dots"></i> Tipo</label>
+                    <label class="form-label text-light"><i class="bi bi-clipboard"></i> Tipo</label>
                     <input type="text" wire:model="tipo" class="form-control">
                     @error('tipo') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
 
                 <div class="mb-3">
             <span style="font-size:20px">
-                <i class="bi bi-briefcase-fill"></i>
+                <i class="bi bi-toggle-on"></i>
                 <label for="status" class="form-label">Status</label>
             </span>
 

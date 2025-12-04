@@ -37,6 +37,7 @@ class SensoresList extends Component
     public function render()
     {
         $sensores = Sensor::where('codigo', 'like', "%{$this->search}%")
+            ->orWhere('ambiente_id', 'like', "%{$this->search}%")
             ->orWhere('tipo', 'like', "%{$this->search}%")
             ->orWhere('descricao', 'like', "%{$this->search}%")
             ->orWhere('status', 'like', "%{$this->search}%")

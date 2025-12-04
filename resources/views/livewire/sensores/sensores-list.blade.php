@@ -1,4 +1,7 @@
-<div class="container-fluid bg-light min-vh-100 py-4" style="background-color: #f0f4f8;"> <!-- Fundo suave da página -->
+<div class="container-fluid bg-light min-vh-100 py-4" style="background-color: #f0f4f8;"> 
+    <div class="mb-3">
+        <input type="text" wire:model.live='search' class="form-control">
+    </div>
     <div class="container">
         <div class="row align-items-center mb-4">
             <div class="col-md-6">
@@ -8,7 +11,6 @@
             </div>
             <div class="col-md-6 text-end">
                 <a href="{{ route('sensores.create') }}" class="btn btn-primary shadow-sm">
-                    <!-- Botão colorido com borda suave -->
                     <i class="bi bi-plus-circle me-1"></i> Novo Sensor
                 </a>
             </div>
@@ -24,11 +26,11 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID do sensor</th>
+                        <th>ID do Sensor</th>
                         <th><i class="bi bi-houses"></i>Ambiente</th>
-                        <th><i class="bi bi-clipboard-data"></i>Tipo</th>
+                        <th><i class="bi bi-clipboard"></i>Tipo</th>
                         <th><i class="bi bi-text-left"></i>Descricao</th>
-                        <th><i class="bi bi-code"></i> Codigo</th>
+                        <th><i class="bi bi-code-slash"></i> Codigo</th>
                         <th><i class="bi bi-toggle-on"></i>Status</th>
                         <th><i class="bi bi-play-circle"></i>Ações</th>
                     </tr>

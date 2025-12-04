@@ -3,6 +3,7 @@
 use App\Livewire\Ambiente\AmbienteCreate;
 use App\Livewire\Ambiente\AmbienteEdit;
 use App\Livewire\Ambiente\AmbienteList;
+use App\Livewire\Auth\Login;
 use App\Livewire\Dashboard;
 use App\Livewire\Registro\RegistroList;
 use App\Livewire\Sensores\SensoresCreate;
@@ -12,7 +13,8 @@ use App\Models\Ambiente;
 use App\Models\Registro;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Dashboard::class);
+Route::get('/dashboard', Dashboard::class)->name('dashboard');
+
 
 
 Route::get('/list/ambientes', AmbienteList::class)->name('ambientes.list');
@@ -32,3 +34,7 @@ Route::get('/edit{id}/sensores', SensoresEdit::class)->name('sensores.edit');
 
 
 Route::get('/list/registros', RegistroList::class)->name('registros-list');
+
+
+
+Route::get('/', Login::class)->name('login');

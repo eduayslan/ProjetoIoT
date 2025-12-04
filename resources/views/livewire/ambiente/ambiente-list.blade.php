@@ -1,4 +1,7 @@
-<div class="container-fluid bg-light min-vh-100 py-4" style="background-color: #f0f4f8;"> <!-- Fundo suave da página -->
+<div class="container-fluid bg-light min-vh-100 py-4" style="background-color: #f0f4f8;">
+    <div class="mb-3">
+        <input type="text" wire:model.live='search' class="form-control">
+    </div>
     <div class="container">
         <div class="row align-items-center mb-4">
             <div class="col-md-6">
@@ -7,14 +10,13 @@
                 </h2>
             </div>
             <div class="col-md-6 text-end">
-                <a href="{{ route('ambientes.create') }}" class="btn btn-primary shadow-sm"> <!-- Botão colorido com borda suave -->
+                <a href="{{ route('ambientes.create') }}" class="btn btn-primary shadow-sm">
                     <i class="bi bi-plus-circle me-1"></i> Novo Ambiente
                 </a>
             </div>
         </div>
 
-        <!-- Card com fundo neutro e leve sombreamento -->
-        <div class="card shadow-lg border-0 rounded-4 bg-white"> <!-- Card com fundo branco e sombra -->
+        <div class="card shadow-lg border-0 rounded-4 bg-white">
             <div class="card-body">
                 <div class="row mb-4 align-items-center">
                     <div class="col-md-6 mb-2 mb-md-0">
@@ -31,11 +33,11 @@
 
                 <div class="table-responsive">
                     <table class="table table-hover align-middle">
-                        <thead class="bg-info text-white"> <!-- Cabeçalho da tabela com fundo azul suave -->
+                        <thead class="bg-info text-white">
                             <tr>
                                 <th><i class="bi bi-person me-1"></i> Nome</th>
                                 <th><i class="bi bi-credit-card me-1"></i> Descrição</th>
-                                <th><i class="bi bi-envelope me-1"></i> Status</th>
+                                <th><i class="bi bi-bar-chart-line"></i> Status</th>
                                 <th class="text-center"><i class="bi bi-gear me-1"></i> Ações</th>
                             </tr>
                         </thead>

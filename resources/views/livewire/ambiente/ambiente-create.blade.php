@@ -1,9 +1,7 @@
 <div class="d-flex justify-content-center align-items-center mt-5" style="background-color: #f7f7f7;">
-    <!-- Cor de fundo alterada -->
     <div class="card shadow-lg bg-dark text-light border-0" style="width: 100%; max-width: 600px;">
-        <!-- Cor do card alterada -->
         <div class="card-body">
-            <h4 class="card-title mb-4 text-center text-warning"> <!-- Cor do título alterada -->
+            <h4 class="card-title mb-4 text-center text-warning">
                 <i class="bi bi-person-plus-fill"></i> Novo Ambiente
             </h4>
 
